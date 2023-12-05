@@ -1,0 +1,100 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+#spotifyButton{
+    background-color: #1DDA63;
+    border: 2px solid #191414;
+    color: #191414;
+    height: 75px;
+    width: 250px;
+    font-size: 20px;
+    border-radius: 25px;
+}
+
+#spotifyButton:hover{
+    background-color: #44E680;
+}
+
+h1{
+    font-size: 50px;
+}
+
+h3{
+    font-size: 20px;
+}
+
+#frontPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+#nowPlaying{
+    height: 120px;
+    display: table;
+    overflow: hidden;
+    background-color: #CCC;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#menuButton{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    width:40px;
+    height:40px;
+    border-radius: 25px;
+    border: 2px solid black;
+    background-color: #ccc;
+    text-align: center;
+}
+
+#menuButton:hover{
+    background-color: #888;
+}
+
+#sidebar{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ccc;
+    overflow-x: hidden;
+    transition: 0.5s;
+    text-align: center;
+}
+
+#main{
+    transition: margin-left .5s;
+}
+
+.sidebar a{
+    border: 2px solid black;
+    height: 50px;
+    font-size: 30px;
+    width: 250px;
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+.sidebar a:hover{
+    background-color: #aaaaaa;
+}
+
+.sidebar .closebtn{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>View Vibe</title>
+		<link rel = "stylesheet" href = "viewvibe.css">
+		<script src = "viewvibe.js"></script>
+	</head>
+	<body>
+		<div id = "sidebar" class = "sidebar">
+			<button type = "button" class = "closebtn" onclick = "closeSide()">X</button>
+			<p style="font-size:30px">Stats</p>
+			<a href = "#">Top Tracks</a>
+			<a href = "#">Top Artists</a>
+			<a href = "#">Top Genres</a>
+		</div>
+		<div id = "main">
+			<button type = "button" id = "menuButton" onclick="openSide()">☰</button>
+			<div id = "nowPlaying">
+				<div style = "display:table-row">
+					<div style = "display:table-cell; width:100px"><img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_Music_icon.svg/722px-Apple_Music_icon.svg.png" style = "height:100px;width:100px;"></div>
+					<div style = "display:table-cell;float:left"><h2>Now Playing:<br>Nothing</h2></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
