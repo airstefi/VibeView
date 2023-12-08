@@ -52,7 +52,8 @@ function getCurrentlyPlaying(accessToken) {
       document.getElementById('nowPlaying').innerHTML = `
         <div style="display: table-row">
           <div style="display: table-cell; width: 100px;padding:10px">
-            <img src="${data.item.album.images[0].url}" style="height: 110px; width: 110px;">
+          <img crossorigin="anonymous" src="${data.item.album.images[0].url.replace(/^http:\/\//i, 'https://')}" style="height: 100px; width: 100px;">
+
           </div>
           <div style="display: table-cell; float: left">
             <h3>Now Playing:<br>${trackName} by ${artistName}<br>Album: ${albumName}</h3>
