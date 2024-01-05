@@ -183,8 +183,9 @@ function draw() {
   }
 }
 
-setInterval(changeBackground,5000);
-setInterval(changeHue,10000);
+//change the color of the backroung to different colours
+setInterval(changeBackground,2000);//2 seconds
+setInterval(changeHue,2000); //5 seconds
 
 class Particle{
   //for the particles to move we need them to have velocity and acceleration
