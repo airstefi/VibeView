@@ -138,75 +138,28 @@ function draw() {
 
 //   translate(width/2, height/2);
 
-  fft.analyze();
-  amp = fft.getEnergy(20,200);
-   
+//   fft.analyze();
+ 
   var wave = fft.waveform();
 
   beginShape();
   for (var i = 0; i<width; i++)
   {
-    var index = floor(map(i,0,width,0,wave.length-1));
+    var index = floor(map(i,0,width,0,wave.length));
 
     var x = i;
-    var y = wave[index]*300+height/2;
+    var y = wave[index]*150+height/2;
     vertex(x,y)
   }
   endShape();
   
 
-  var p = new Particle();
-  particles.push(p);
 
-  for(var i=0; i<particles.length; i++){
-   
-      particles[i].update();
-      particles[i].show();
-    
-   
-  }
 }
 
 //change the color of the backroung to different colours
 setInterval(changeBackground,2000);//2 seconds
 setInterval(changeHue,2000); //5 seconds
 
-class Particle{
-  //for the particles to move we need them to have velocity and acceleration
-  constructor(){
-    this.pos = p5.Vector.random2D().mult(250);
-    this.vel = createVector(0,0); //when they are first created they are not moving
-    this.acc = this.pos.copy().mult(random(0.0001,0.00001)); //after they are created they will move away from the center, it needs to have the same direction as the position
-    //it also needs to be very small so that it doesn't move too fast
 
-    this.w = random(3,5);
-  }
 
-  update(cond){
-    this.vel.add(this.acc);
-    this.pos.add(this.vel);
-    if(cond){
-      this.pos.add(this.vel);
-      this.pos.add(this.vel);
-      this.pos.add(this.vel);
-    }
- }
-
-  //controlling the particles once they reach the edge of the screen
-  edges(){
-    if (this.pos.x<-width/2 || this.pos.x>width/2 || this.pos.y<-height/2 || this.pos.y>height/2){
-      return true;
-    }
-
-    else{
-      return false;
-    }
-
-  }
-
-  show(){
-    noStroke();
-    fill(255);
-    ellipse(this.pos.x,this.pos.y,5,5);
-  }
-}
